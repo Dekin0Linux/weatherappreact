@@ -17,9 +17,9 @@ function Condition(props) {
         return `${hour}:${minutes}`
     }
   return (
-    <div className='p-5 my-2 bg-slate-200 rounded-lg shadow-inner'>
+    <div className='p-5 my-5 bg-slate-100 rounded-lg shadow-inner'>
         <div>
-            <h1>Condition</h1>
+            <h1 className='font-semibold text-base'>Condition</h1>
             <div className='md:grid grid-cols-4 md:gap-10 gap-5 my-2 flex flex-wrap'>
                 <div>
                     <p className='text-slate-400 font-medium'>Description</p>

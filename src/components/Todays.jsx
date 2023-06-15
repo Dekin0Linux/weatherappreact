@@ -62,7 +62,7 @@ const Today=({info})=>{
 function Todays({data}) {
   return (
     <div className=''>
-        <div className='p-5 bg-slate-200 rounded-lg shadow-inner overflow-auto'>
+        <div className='p-5 bg-slate-100 rounded-lg shadow-inner overflow-auto'>
             <p className='font-semibold text-base'>Today's Forecast</p>
             <div className='flex my-1 md:gap-12 gap-5'>
                 {

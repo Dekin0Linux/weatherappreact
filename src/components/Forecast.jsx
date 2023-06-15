@@ -53,8 +53,8 @@ function Forecast(props) {
         <div className='flex justify-between p-5'>
             <div className='flex flex-col justify-between'>
                 <div className=''>   
-                    <h1 className='lg:text-5xl text-xl font-bold text-green-600'>{props.forecast.name}-{props.forecast.sys.country}</h1>
-                    <small className='capitalize font-semibold text-xl text-slate-400'>{props.forecast.weather[0].description }</small>
+                    <h1 className='lg:text-5xl text-xl font-bold '>{props.forecast.name}-{props.forecast.sys.country}</h1>
+                    <small className='capitalize font-semibold text-xl text-gray-600 my-2'>{props.forecast.weather[0].description }</small>
                 </div>
 
                 <div className='inline-flex'>
