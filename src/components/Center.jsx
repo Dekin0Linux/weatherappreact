@@ -12,6 +12,7 @@ function Center() {
     const [loading,setLoading] = useState(true)
 
     const handleInput=(event)=>{
+
         setCity(event.target.value)
         if(event.target.value == ''){
             setCity('accra')
@@ -26,6 +27,9 @@ function Center() {
         if(res.cod == 200){
             setForecast(res)
             setLoading(false)
+        }else{
+            setError(res.message)
+            setLoading(false)
         }
       })
     }
@@ -39,6 +43,9 @@ function Center() {
             const houlyReport = res.list.slice(0,6)
             setToday(houlyReport)
             setLoading(false)
+        }else{
+            setError(res.message)
+            
         }
      })
     }
@@ -49,9 +56,9 @@ function Center() {
     },[city])
 
   return (
-    <div className='flex-auto w-[60%] px-10'>
+    <div className='flex-auto w-[60%] md:px-10'>
         <div className='w-full'>
-            <input type="search" className='outline-none p-3 shadow-slate-300 shadow-md rounded-full w-full' onChange={handleInput}/>
+            <input type="search" className='outline-none p-5 shadow-slate-300 shadow-md rounded-lg w-full' onChange={handleInput}/>
         </div>
 
         {
@@ -61,7 +68,11 @@ function Center() {
                     <Todays data={today}/>
                     <Condition forecast={forecast}/>
                 </div>
-            ): 'Loading'
+            ): (
+                <div className='w-full h-full py-10'>
+                    <h3 className='font-bold text-3xl'>Loading...</h3>
+                </div>
+            )
         }
         
     </div>

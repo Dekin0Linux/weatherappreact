@@ -4,8 +4,15 @@ function Condition(props) {
     const dateConverter=(date)=>{
         let cdate = new Date(date * 1000)
 
-        const hour = cdate.getHours()
-        const minutes = cdate.getMinutes()
+       let hour = cdate.getHours()
+        let minutes = cdate.getMinutes()
+        //format time with hour and miuntes is less than 12
+        if(hour < 12){
+            hour = '0'+ hour
+        }
+        if(minutes < 10){
+            minutes = '0'+ minutes
+        }
 
         return `${hour}:${minutes}`
     }
@@ -13,7 +20,7 @@ function Condition(props) {
     <div className='p-5 my-2 bg-slate-200 rounded-lg shadow-inner'>
         <div>
             <h1>Condition</h1>
-            <div className='grid grid-cols-4 gap-10 my-2'>
+            <div className='md:grid grid-cols-4 md:gap-10 gap-5 my-2 flex flex-wrap'>
                 <div>
                     <p className='text-slate-400 font-medium'>Description</p>
                     <p className='capitalize font-bold'>{props.forecast.weather[0].description }</p>  
@@ -29,7 +36,7 @@ function Condition(props) {
                 </div>
                 <div>
                     <p className='text-slate-400 font-medium'>Pressure</p>
-                    <p className='font-bold'>{props.forecast.main.pressure }</p>
+                    <p className='font-bold'>{props.forecast.main.pressure } hpa</p>
                 </div>
                 <div>
                     <p className='text-slate-400 font-medium'>Reel Feel</p>

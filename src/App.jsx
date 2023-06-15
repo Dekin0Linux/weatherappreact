@@ -5,11 +5,9 @@ import Sidebar from './components/Sidebar'
 
 function App() {
   return (
-    <div className='flex justify-center items-center h-screen'>
-      <div className='container mx-auto p-5 bg-white shadow-green-300 flex rounded-xl '>
-        <Menu/>
+    <div className='md:flex flex-wrap justify-center items-center h-screen p-5'>
+      <div className='container md:w-[50%] md:mx-auto p-2 bg-white shadow-blue-300 flex flex-wrap rounded-xl h-full border-[3px] border-blue-500 shadow-lg overflow-auto'>
         <Center/>
-        <Sidebar/>
       </div>
 
     </div>
